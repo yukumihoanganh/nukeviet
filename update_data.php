@@ -22,11 +22,11 @@ $nv_update_config['formodule'] = "";
 // Cap nhat cho module nao, de trong neu la cap nhat NukeViet, ten thu muc module neu la cap nhat module
 
 // Thong tin phien ban, tac gia, ho tro
-$nv_update_config['release_date'] = 1368606493;
+$nv_update_config['release_date'] = 1372606588;
 $nv_update_config['author'] = "VINADES.,JSC (contact@vinades.vn)";
 $nv_update_config['support_website'] = "http://nukeviet.vn/phpbb/viewforum.php?f=149";
-$nv_update_config['to_version'] = "3.5.00";
-$nv_update_config['allow_old_version'] = array( "3.4.02.r1929" );
+$nv_update_config['to_version'] = "3.5.01";
+$nv_update_config['allow_old_version'] = array( "3.4.02.r1929", "3.5.00.r3500" );
 $nv_update_config['update_auto_type'] = 2;
 // 0:Nang cap bang tay, 1:Nang cap tu dong, 2:Nang cap nua tu dong
 
@@ -81,7 +81,7 @@ $nv_update_config['tasklist'][] = array(
 );
 
 $nv_update_config['tasklist'][] = array(
-	'r' => '3500',
+	'r' => '3501',
 	'rq' => 2,
 	'l' => 'nv_up_finish',
 	'f' => 'nv_up_finish'
@@ -781,11 +781,11 @@ function nv_up_finish( )
 		'message' => '',
 	);
 
-	$mod_version = "3.5.00 1369671320";
+	$mod_version = "3.5.01 1372606588";
 	$db->sql_query( "UPDATE `" . $db_config['prefix'] . "_setup_modules` SET `mod_version`='" . $mod_version . "' WHERE `module_file` IN ('about', 'banners', 'contact', 'news', 'voting', 'search', 'users', 'download', 'weblinks', 'statistics', 'faq', 'menu', 'rss')" );
 
-	$db->sql_query( "REPLACE INTO `" . NV_CONFIG_GLOBALTABLE . "` (`lang`, `module`, `config_name`, `config_value`) VALUES ('sys', 'global', 'version', '3.5.00')" );
-	$db->sql_query( "REPLACE INTO `" . NV_CONFIG_GLOBALTABLE . "` (`lang`, `module`, `config_name`, `config_value`) VALUES ('sys', 'global', 'revision', '3500')" );
+	$db->sql_query( "REPLACE INTO `" . NV_CONFIG_GLOBALTABLE . "` (`lang`, `module`, `config_name`, `config_value`) VALUES ('sys', 'global', 'version', '3.5.01')" );
+	$db->sql_query( "REPLACE INTO `" . NV_CONFIG_GLOBALTABLE . "` (`lang`, `module`, `config_name`, `config_value`) VALUES ('sys', 'global', 'revision', '3501')" );
 
 	nv_save_file_config_global( );
 
